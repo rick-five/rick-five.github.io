@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"丁真今天抽什么的算法笔记","children":[{"content":"&#x57fa;&#x7840;&#x6570;&#x636e;&#x7ed3;&#x6784;","children":[{"content":"&#x94fe;&#x5f0f;&#x5b58;&#x50a8;","children":[{"content":"<a href><strong>&#x7ed3;&#x6784;&#x4f18;&#x52bf;</strong></a>","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"<strong>&#x57fa;&#x672c;&#x7ed3;&#x6784;</strong>","children":[{"content":"<a href>&#x53cc;&#x5411;&#x94fe;&#x8868;</a>","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"<a href>&#x5355;&#x94fe;&#x8868;</a>","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"<a href>&#x5faa;&#x73af;&#x94fe;&#x8868;</a>","children":[],"payload":{"tag":"li","lines":"12,14"}}],"payload":{"tag":"li","lines":"9,14"}}],"payload":{"tag":"h3","lines":"7,8"}},{"content":"&#x987a;&#x5e8f;&#x5b58;&#x50a8;","children":[{"content":"<a href><strong>&#x7ed3;&#x6784;&#x4f18;&#x52bf;</strong></a>","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"<strong>&#x57fa;&#x672c;&#x7ed3;&#x6784;</strong>","children":[{"content":"<a href>&#x6570;&#x7ec4;</a>","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"<a href>&#x6808;</a>","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"<a href>&#x54c8;&#x5e0c;&#x8868;</a>","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"<a href><s>&#x5b57;&#x5178;&#xff1f;&#xff01;</s></a>","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"<a href>&#x4e32;</a>","children":[],"payload":{"tag":"li","lines":"21,23"}}],"payload":{"tag":"li","lines":"16,23"}}],"payload":{"tag":"h3","lines":"14,15"}},{"content":"&#x6811;&#x5f0f;&#x5b58;&#x50a8;","children":[{"content":"<a href><strong>&#x7ed3;&#x6784;&#x4f18;&#x52bf;</strong></a>","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"<strong>&#x57fa;&#x672c;&#x7ed3;&#x6784;</strong>","children":[{"content":"<a href>&#x5806;</a>","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"<a href>&#x6570;&#x7ec4;&#xff1f;&#xff01;&#xff01;</a>","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"<font color=\"red\"><strong>&#x6811;</strong></font>","children":[{"content":"<a href>&#x4e8c;&#x53c9;&#x6811;</a>","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"<a href><font color=\"red\"><strong>&#x7ea2;</strong><font color=\"purple\"> <strong>&#x9ed1;</strong> </font></font>&#x6811;</a>","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"<a href>&#x5e76;&#x67e5;&#x96c6;</a>","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"<a href>&#x7ebf;&#x6bb5;&#x6811;</a>","children":[],"payload":{"tag":"li","lines":"32,33"}}],"payload":{"tag":"li","lines":"28,33"}}],"payload":{"tag":"li","lines":"25,33"}}],"payload":{"tag":"h3","lines":"23,24"}},{"content":"&#x56fe;&#x5f0f;&#x7ed3;&#x6784;","children":[{"content":"<a href><strong>&#x7ed3;&#x6784;&#x4f18;&#x52bf;</strong></a>","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"\n<h2 data-lines=\"35,37\"><strong>&#x57fa;&#x672c;&#x7ed3;&#x6784;</strong></h2>","children":[],"payload":{"tag":"li","lines":"35,37"}}],"payload":{"tag":"h3","lines":"33,34"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"&#x57fa;&#x7840;&#x7b97;&#x6cd5;","children":[{"content":"&#x9012;&#x5f52;","children":[{"content":"<a href=\"https://algo.itcharge.cn/09.Algorithm-Base/02.Recursive-Algorithm/\"><strong>&#x9012;&#x5f52;&#x601d;&#x8def;</strong></a>","children":[],"payload":{"tag":"li","lines":"39,40"}}],"payload":{"tag":"h3","lines":"38,39"}},{"content":"&#x5206;&#x6cbb;","children":[{"content":"<a href><strong>&#x5206;&#x6cbb;&#x601d;&#x8def;</strong></a>","children":[],"payload":{"tag":"li","lines":"41,42"}}],"payload":{"tag":"h3","lines":"40,41"}},{"content":"&#x8d2a;&#x5fc3;","children":[],"payload":{"tag":"h3","lines":"42,43"}},{"content":"&#x56de;&#x6eaf;","children":[],"payload":{"tag":"h3","lines":"43,44"}}],"payload":{"tag":"h2","lines":"37,38"}},{"content":"&#x52a8;&#x6001;&#x89c4;&#x5212;","children":[],"payload":{"tag":"h2","lines":"44,45"}}]},{"colorFreezelevel":3})</script>
+</body>
+</html>
