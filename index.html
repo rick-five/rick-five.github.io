@@ -1,1 +1,486 @@
-<t> 丁真今天抽什么 </t>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick Five - Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #ec4899;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        /* Projects Section */
+        .projects {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem;
+            color: white;
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: var(--light-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--border-color);
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Rick Five</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>A passionate developer crafting beautiful and functional digital experiences</p>
+        <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a full-stack developer with a passion for creating elegant solutions to complex problems. 
+                    With expertise in modern web technologies, I build responsive and user-friendly applications 
+                    that make a real impact.
+                </p>
+                <p>
+                    When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+                    projects, or sharing knowledge with the developer community.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 12px; padding: 2rem; color: white; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+                <p style="font-size: 1.2rem; font-weight: 500;">Your Photo Here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Project One</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A modern web application built with React and Node.js. Features real-time data updates 
+                        and a responsive design that works seamlessly across all devices.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Project Two</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        An interactive dashboard with advanced analytics and data visualization. 
+                        Built with Vue.js and powered by a scalable backend infrastructure.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Vue.js</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Project Three</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A full-featured e-commerce platform with secure payment integration and 
+                        inventory management. Optimized for performance and user experience.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Stripe</span>
+                        <span class="project-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+        <a href="mailto:hello@example.com" class="btn btn-primary">Send Me an Email</a>
+        <div class="social-links">
+            <a href="https://github.com" class="social-link" title="GitHub">
+                <span>💻</span>
+            </a>
+            <a href="https://linkedin.com" class="social-link" title="LinkedIn">
+                <span>🔗</span>
+            </a>
+            <a href="https://twitter.com" class="social-link" title="Twitter">
+                <span>𝕏</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rick Five. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
